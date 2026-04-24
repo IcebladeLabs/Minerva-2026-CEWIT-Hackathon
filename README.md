@@ -1,8 +1,9 @@
 <div align="center">
 
-# Minerva
+<div align="center">
+  <img src="/assets/minerva-logo-dark.svg" alt="Minerva" width="700" />
+</div>
 
-### Industrial AI Watchguard
 
 **Entry for the 2026 CEWIT Hackathon**
 
@@ -14,7 +15,7 @@
 
 ## The Problem
 
-In smart factories where manufacturing is autonomous, safety remains a pressing concern. Supervision is normally driven by cameras, which can be monitored remotely: either by a human or by an AI running in the cloud. However, in the case of a network outage, the loss of supervision can be deadly: undetected fires, jammed machines, or other anomalies can lead to production delays, massive financial losses, and danger for human workers on site.
+In smart factories where manufacturing is autonomous, safety remains a pressing concern. Supervision is normally driven by cameras, which are monitored remotely: either by a human or by an AI running in the cloud. However, in the case of a outage, the loss of supervision can be deadly: undetected fires, jammed machines, or other anomalies can lead to production delays, massive financial losses, and danger for human workers on site.
 
 ## Our Solution
 
@@ -22,8 +23,17 @@ In smart factories where manufacturing is autonomous, safety remains a pressing 
 
 ## Features
 
+- **Authentication** — Operator login with JWT-based session management
+<div align="center">
+  <img src="/assets/login.png" alt="Minerva" width="700" />
+</div>
+
 - **Multi-feed CCTV dashboard** — Add live camera streams or `.mp4` files; all are monitored simultaneously in a 4-panel grid
-- **Real-time YOLOv8 object detection** — Runs entirely on-device with no cloud dependency
+<div align="center">
+  <img src="/assets/blankdash.png" alt="Minerva" width="700" />
+</div>
+
+- **Real-time YOLOv8 object detection** — Runs entirely on-device with no cloud dependency, can detect humans/ objects in frame.
 - **Zone-aware anomaly classification** — Each feed is designated as one of three zone types, each with its own severity rules and detection targets:
 
   | Zone | Critical Triggers | Warning Triggers |
@@ -33,7 +43,6 @@ In smart factories where manufacturing is autonomous, safety remains a pressing 
   | **General** | Fire / smoke | Unidentified activity |
 
 - **Live dashboard alerts** — Incidents are logged in real time with snapshots, severity levels, and timestamps
-- **Authentication** — Operator login with JWT-based session management
 - **Offline-first architecture** — SQLite database, local snapshot storage, and on-device inference ensure full functionality without internet
 
 ### Planned Features
