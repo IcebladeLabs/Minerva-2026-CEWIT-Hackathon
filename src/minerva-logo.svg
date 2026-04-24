@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
+  <!-- Shield icon -->
+  <rect x="10" y="15" width="90" height="90" rx="22" fill="url(#grad)"/>
+  <path d="M55 30L35 40V55C35 68 43 79 55 83C67 79 75 68 75 55V40L55 30Z"
+        fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M47 56L53 62L65 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Text: Minerva -->
+  <text x="120" y="72" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="52" fill="white">
+    Min<tspan fill="#38bdf8">erva</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="122" y="96" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="600" font-size="14" fill="#64748b" letter-spacing="3">
+    INDUSTRIAL AI WATCHGUARD
+  </text>
+
+  <defs>
+    <linearGradient id="grad" x1="10" y1="15" x2="100" y2="105" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+</svg>

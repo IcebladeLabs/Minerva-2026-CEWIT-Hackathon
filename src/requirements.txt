@@ -1,0 +1,15 @@
+# Core web framework
+flask>=2.2,<4
+flask-cors>=3.0,<5
+pyjwt>=2.6,<3
+
+# Computer vision -- pre-installed on Jetson, pip install on other machines
+ultralytics>=8.0
+opencv-python-headless>=4.5
+
+# SMS alerts
+twilio>=8.0,<10
+
+# --- Pre-installed on Jetson (don't pip install these there) ---
+# numpy
+# torch / torchvision (Jetson has JetPack versions)

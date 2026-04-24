@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./db:/app/db
+      - ./snapshots:/app/snapshots
+      - ./videos:/app/videos:ro
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
+      - DEBUG=0
+      - YOLO_MODEL=yolov8n.pt
+      - YOLO_CONFIDENCE=0.4
+      # SMS (Twilio — optional)
+      - TWILIO_SID=${TWILIO_SID:-}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN:-}
+      - TWILIO_FROM_NUMBER=${TWILIO_FROM_NUMBER:-}
+      - ALERT_PHONES=${ALERT_PHONES:-}
+      # Email (SMTP — optional, works with Gmail app password)
+      - SMTP_HOST=${SMTP_HOST:-smtp.gmail.com}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
+      - ALERT_EMAILS=${ALERT_EMAILS:-}
+      - ALERT_COOLDOWN=${ALERT_COOLDOWN:-60}
+    # Uncomment for USB webcam access:
+    devices:
+      - /dev/video0:/dev/video0
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
